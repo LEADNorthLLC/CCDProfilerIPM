@@ -1,0 +1,32 @@
+<header>
+<!--<div class="title-container">
+    <h1 class="site-title">Your Site Title</h1>
+  </div>-->
+  <div class="logo-container">
+    <img src="assets/LEADNorth.avif" alt="My Logo" class="logo" />
+  </div>
+
+  <hr class="separator-line" />
+
+  <nav class="arrow-nav">
+    <ul class="arrow-steps">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/index">Dashboard</a>
+      </li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/data-importer">Import Data</a>
+      </li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+        <a routerLink="/reports">Reports</a>
+      </li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/settings">Configuration</a>
+      </li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/help-page">Help</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Import Data</h1>
+  
+  <div class="form-container">
+    <div class="form-group">
+      <label for="importType">Select Import Type:</label>
+      <select id="importType" (change)="updateImportType($event)">
+        <option value="bulk">File Import</option>
+        <option value="database">Document Repository Import</option>
+        <option value="api">API Import</option>
+      </select>
+    </div>
+
+    <div *ngIf="importType === 'bulk'" class="form-group">
+      <label for="directoryPath">Enter Directory Path:</label>
+      <input type="text" id="directoryPath" [(ngModel)]="directoryPath" placeholder="Enter full directory path" />
+    </div>
+
+    <div *ngIf="importType === 'api'" class="form-group">
+      <label for="directoryPath">Select Directory:</label>
+      <input type="file" id="directoryUpload" (change)="onDirectorySelect($event)" webkitdirectory directory />
+    </div>
+
+    <div *ngIf="importType === 'database'" class="form-group">
+      <label for="numDocuments">Number of Documents to Import:</label>
+      <input type="number" id="numDocuments" [(ngModel)]="numDocuments" placeholder="Enter number of documents" min="1"/>
+      <label for="filterDocuments">Filter ID on:</label>
+      <input id="filterDocuments" [(ngModel)]="filterDocuments" placeholder=""/>
+    </div>
+
+    <div class="form-group">
+      <label for="profileID">Enter Profile Name:</label>
+      <input type="text" id="profileID" [(ngModel)]="profileID" placeholder="Enter profile name"/>
+    </div>
+
+    <div class="form-group">
+      <button type="button" (click)="startImport()">Start Import</button>
+    </div>
+
+    <div *ngIf="loading" class="loading-bar">
+      <div class="loading-indicator"></div>
+    </div>
+
+    <div id="importResult">
+      <p *ngIf="importResult">{{ importResult }}</p>
+    </div>
+  </div>
+  
+  <app-alert-banner [alert]="currentAlert" *ngIf="currentAlert"></app-alert-banner>
+</div>

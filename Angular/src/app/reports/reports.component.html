@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Generated Reports</h1>
+  <div class="reports-container">
+    <div class="report-selection">
+      <label for="reportSelect">Select a Report:</label>
+      <select id="reportSelect" [(ngModel)]="selectedProfileID" (change)="loadReportData()">
+        <option *ngFor="let id of profileIDs" [value]="id">{{ id }}</option>
+      </select>
+      <button (click)="exportReport()">Export Report</button>
+    </div>
+
+    <div class="report-section" *ngIf="selectedProfileID">
+      <h2>CCD Report Breakdown</h2>
+      <p>Click on a section to expand and view details.</p>
+
+      <div *ngFor="let item of sectionsMapping">
+        <button class="collapsible" style="font-family: poppins-extralight, poppins, sans-serif;" (click)="toggleSection(item.key)">
+          {{ item.display }}
+        </button>
+        <div 
+          class="content" 
+          [style.display]="sectionVisibility[item.key] ? 'block' : 'none'" 
+          [innerHTML]="reportSections[item.key]">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

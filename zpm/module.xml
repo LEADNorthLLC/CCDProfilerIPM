@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+  <Document name="LEADNorthCCDProfiler.ZPM">
+    <Module>
+      <Name>LEADNorthCCDProfiler</Name>
+      <Version>1.0.0</Version>
+      <Description>LEAD North's CCD Data Profiling Tool</Description>
+      <Keywords>CCD, Data Profiling, Tool, Data</Keywords>
+      <Packaging>module</Packaging>
+      <WebApplication CookiePath="/csp/LeadNorth/api/" DefaultTimeout="900" Description="LeadNorth API's" DispatchClass="LEADNorth.REST.Handler" MatchRoles=":%All" PasswordAuthEnabled="1" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="0" Url="/csp/LeadNorth/api" UseSessionCookie="2"/>
+      <WebApplication AuthenticationMethods="8224" AutoCompile="0" CookiePath="/csp/healthshare/" DefaultTimeout="900" DeployPath="${cspdir}healthshare\leadnorth\" Description="HealthShare Foundation Portal" GroupById="%ISCMgtPortal" InboundWebServicesEnabled="0" MatchRoles=":%DB_HSCUSTOM:%DB_HSLIB:%HS_DB_HSSYS:%HS_DB_LEADNORTH" Recurse="1" ServeFiles="2" ServeFilesTimeout="3600" SourcePath="C:\InterSystems\HealthConnect\CSP\LEADNorth" Url="/csp/healthshare/leadnorth" UseSessionCookie="2"/>
+      <LifecycleClass>%IPM.Lifecycle.Module</LifecycleClass>
+      <SourcesRoot>root</SourcesRoot>
+    </Module>
+  </Document>
+</Export>

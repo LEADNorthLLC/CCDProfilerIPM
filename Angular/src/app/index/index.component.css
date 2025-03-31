@@ -1,0 +1,39 @@
+ .container {
+    padding: 20px;
+  }
+  .dashboard {
+    display: flex;
+    flex-wrap: wrap;
+	max-width: 1000px;
+	margin: auto;
+  }
+table {
+  border: 1px solid #647C6D;
+  border-collapse: collapse;
+  width: 100%; 
+text-align:left;
+}
+
+table th,
+table td {
+  border: 1px solid #647C6D;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+table {
+  margin: 20px 0;
+}
+
+  .widget {
+    background-color: #F4F8F5;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 15px;
+    flex: 1;
+    min-width: 300px;
+  }
+  .widget h3 {
+    margin-top: 0;
+  }

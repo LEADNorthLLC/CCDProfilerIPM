@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>CDA Profiler Dashboard</h1>
+  <!--<button (click)="callHello()">Call IRIS Hello</button>-->
+  <p>{{ responseMessage }}</p>
+
+  <div class="dashboard">
+    <div class="widget" id="validation-results-widget">
+      <h3>Validation Results(Future addition)</h3>
+      <table class="validation-table">
+        <thead>
+          <tr>
+            <th>Document</th>
+            <th>Status</th>
+            <th>Errors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Document 1</td>
+            <td>Valid</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Document 2</td>
+            <td>Invalid</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Document 3</td>
+            <td>Valid</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="widget">
+      <h3>Recent Reports</h3>
+      <ul [innerHTML]="reportsHtml"></ul> 
+    </div>
+  </div>
+</div>

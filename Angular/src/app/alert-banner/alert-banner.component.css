@@ -1,0 +1,40 @@
+.alert-banner {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 1002;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.alert-banner.success {
+  background-color: #55E866;
+  color: #000000;
+}
+
+.alert-banner.warning {
+  background-color: #FCE74A;
+  color: #000000;
+}
+
+.alert-banner.error {
+  background-color: #E92222;
+  color: #ffffff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  color: inherit;
+}

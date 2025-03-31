@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>Help / Documentation</h1>
+  <div class="help-container">
+  
+    <div class="section" id="getting-started">
+      <h2>Getting Started</h2>
+      <p>
+        This section provides an overview of how to begin using the CDA Profiler tool.
+      </p>
+    </div>
+  
+    <div class="section" id="importing-data">
+      <h2>Importing Data</h2>
+      <p>
+        To bring data into the CDA Profiler, navigate to <strong>Import Data</strong> in the top menu. 
+        Select the data source you wish to import from (e.g., file upload, database, or another external source).
+      </p>
+      <ul>
+        <li><strong>Number of Documents to Import(database import only):</strong> Specify how many documents you want to process in one go.</li>
+        <li><strong>Filter ID(database import only):</strong> Optionally provide a filter or identifier to narrow down which records to import.</li>
+        <li><strong>Profile Name:</strong> Give a unique name to the import session, especially if you plan to run multiple imports.</li>
+      </ul>
+      <p>
+        After configuring these fields, click <strong>Start Import</strong>. The tool will parse the incoming data using XSLT transformations and XPath expressions. If you encounter issues, check the <strong>Troubleshooting</strong> section below.
+      </p>
+    </div>
+  
+    <div class="section" id="generating-reports">
+      <h2>Generating Reports</h2>
+      <p>
+        Once data is imported, you can view your custom reports in the <strong>Reports</strong> section.
+      </p>
+      <ul>
+        <li><strong>Reports:</strong> Choose from any of the reports you have created and view the data by section and field.</li>
+        <li><strong>Exporting:</strong> Export generated reports to various formats (e.g., PDF, Excel) for sharing or further analysis.</li>
+        <li><strong>Data Quality Summaries:</strong> Not available at this time.</li>
+        <li><strong>Validation Results:</strong> Not available at this time.</li>
+      </ul>
+      <p>
+        The reports can help you spot trends, ensure compliance with standards, and validate document accuracy.
+      </p>
+    </div>
+  
+    <div class="section" id="system-settings">
+      <h2>System Settings</h2>
+      <p>
+        The <strong>Settings</strong> page lets administrators configure global preferences and advanced options:
+      </p>
+      <ul>
+        <li><strong>XSLT / XPath Expressions:</strong> Edit or upload transformations for extracting specific data from CCD documents. Use the testing utility to test your changes against a document(file must be on your local).</li>
+        <li><strong>User Roles & Permissions:</strong> Assign roles (e.g., Admin, Analyst) to control access levels and tool functionality.</li>
+        <li><strong>Deleting Data:</strong> You may delete a profile and its associated data or delete all data. Note, this action cannot be undone.</li>
+      </ul>
+      <p>
+        Any changes here can significantly impact how the profiler parses data and displays reports, so proceed with caution.
+      </p>
+    </div>
+  
+    <div class="section" id="troubleshooting-faq">
+      <h2>Troubleshooting / FAQ</h2>
+      <p>
+        Below are common issues and tips:
+      </p>
+      <ul>
+        <li><strong>Data Import Errors:</strong> Ensure your file format is valid. Check console or server logs for details on parsing failures.</li>
+        <li><strong>Missing Reports:</strong> Confirm the import completed successfully. If the data was invalid, the report might not generate.</li>
+        <li><strong>XSLT Issues:</strong> Validate your XSLT / XPath syntax. Incorrect expressions can cause partial or empty transformations.</li>
+        <li><strong>Permission Denied:</strong> If you can’t access a page or feature, verify your user role under <strong>User Roles & Permissions</strong>.</li>
+        <li><strong>General Performance:</strong> Large imports can take time. Try splitting files or allocating more resources to the server.</li>
+      </ul>
+      <p>
+        If you still experience problems, contact your system administrator or consult the application logs for detailed error messages.
+      </p>
+    </div>
+  
+  </div>
+</div>

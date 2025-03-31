@@ -1,0 +1,97 @@
+<div class="container">
+  <h1>Settings</h1>
+
+  <app-alert-banner [alert]="currentAlert" *ngIf="currentAlert"></app-alert-banner>
+
+  <div class="settings-container">
+    <div class="section" id="xslt-editor">
+      <h2>Edit XSLT</h2>
+      <div class="form-group">
+        <label for="xsltBlock">Select XSLT Block:</label>
+        <select id="xsltBlock" name="xsltBlock" [(ngModel)]="xsltBlock" (change)="loadXSLTContent()">
+          <option value="MetadataXSLT">MetadataXSLT</option>
+          <option value="AllergyXSLT">AllergyXSLT</option>
+          <option value="MedicationsXSLT">MedicationsXSLT</option>
+          <option value="ProblemsXSLT">ProblemsXSLT</option>
+          <option value="ProceduresXSLT">ProceduresXSLT</option>
+          <option value="ResultsXSLT">ResultsXSLT</option>
+          <option value="VitalSignsXSLT">VitalSignsXSLT</option>
+          <option value="ImmunizationsXSLT">ImmunizationsXSLT</option>
+          <option value="PlanOfCareXSLT">PlanOfCareXSLT</option>
+          <option value="SocialHistoryXSLT">SocialHistoryXSLT</option>
+          <option value="FunctionalStatusXSLT">FunctionalStatusXSLT</option>
+          <option value="FamilyHistoryXSLT">FamilyHistoryXSLT</option>
+          <option value="AdvanceDirectiveXSLT">AdvanceDirectiveXSLT</option>
+          <option value="EncounterXSLT">EncounterXSLT</option>
+          <option value="PayerXSLT">PayerXSLT</option>
+          <option value="PatientXSLT">PatientXSLT</option>
+          <option value="DiagnosisXSLT">DiagnosisXSLT</option>
+          <option value="ImplantsXSLT">ImplantsXSLT</option>
+          <option value="GoalsXSLT">GoalsXSLT</option>
+          <option value="EncompassingEncounterXSLT">EncompassingEncounterXSLT</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="xpathContent">Edit XPath Expressions:</label>
+        <div
+          id="xpathContent"
+          class="editable-div"
+          contenteditable="true"
+          (input)="onEditableInput($event)"
+          #editableDiv>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="button" (click)="saveXPaths()">Save XPaths</button>
+      </div>
+
+      <h2>Test XSLT</h2>
+      <div class="form-group">
+        <label for="sampleData">Path to CCD:</label>
+        <input id="sampleData" name="sampleData" [(ngModel)]="sampleData" />
+      </div>
+
+      <div class="form-group">
+        <button type="button" (click)="applyXSLT()">Apply XSLT</button>
+      </div>
+
+      <div class="form-group">
+        <label for="transformedOutput">Transformed Output:</label>
+        <div id="transformedOutput" class="response-box"></div>
+      </div>
+    </div>
+
+    <div class="section" id="delete-section">
+      <h2>Manage Data</h2>
+      <div class="form-group">
+        <label for="profileIDSelect">Select ProfileID to Delete Data:</label>
+        <select id="profileIDSelect" name="profileIDSelect" [(ngModel)]="selectedProfileID">
+          <option *ngFor="let id of profileIDs" [value]="id">{{ id }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="deleteProfileData()">Delete Data for Selected ProfileID</button>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="deleteAllData()">Delete All Data</button>
+      </div>
+
+      <!--<div class="section" id="chatgpt-section">
+        <h2>Ask AI about XSLT</h2>
+        <div class="form-group">
+          <label for="chatInput">Ask anything about XSLT:</label>
+          <input id="chatInput" placeholder="Type your question here..." />
+        </div>
+        <div class="form-group">
+          <button id="submitQuestion" type="button" (click)="chatGPTNotImplemented()">Submit</button>
+        </div>
+        <div class="form-group">
+          <label for="chatResponse">Response from AI chat:</label>
+          <div id="chatResponse" class="response-box"></div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</div>
